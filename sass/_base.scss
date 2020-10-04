@@ -1,0 +1,134 @@
+// COLORS
+
+
+$color-primary: #74D3AE;
+$color-secondary: #678D58;
+$color-tertiary: #A6C48A;
+$color-quad: #F6E7CB;
+$color-five: #DD9787;
+
+
+
+$color-white:#fff;
+$color-black:#000;
+$color-grey-dark:#777;
+$color-grey-dark-1:#333;
+$color-grey-light-1:#f7f7f7;
+
+
+//fonts
+$font-family: 'Roboto', sans-serif;
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+}
+
+html{
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body{
+	
+	font-family: $font-family;
+	font-weight: 400;
+	line-height: 1.6;
+	min-height: 100vh;
+}
+
+
+
+
+
+///// ANIMATIONS
+@keyframes moveInRight{
+	0%{
+		opacity: 0;
+		transform:translateX(10rem);
+	}
+
+	80%{
+		transform: translateX(-1rem);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0);
+	}
+
+}
+
+
+
+
+@keyframes moveInLeft{
+	0%{
+		opacity: 0;
+		transform:translateX(-10rem);
+	}
+
+	80%{
+		transform: translateX(1rem);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0);
+	}
+
+}
+
+
+@keyframes moveInBottom{
+	0%{
+		opacity: 0;
+		transform:translateY(3rem);
+	}
+
+
+	100%{
+		opacity: 1;
+		transform: translate(0);
+	}
+
+}
+
+
+
+
+
+
+
+
+/// MIXINS 
+
+
+@mixin respond($breakpoint){
+	@if $breakpoint == phone{
+		@media only screen and (max-width: 37.5em){@content}; // 600 px
+	}
+
+	@if $breakpoint == tab-port{
+		@media only screen and  (max-width: 56.25em){@content}; // 900 px
+	}
+
+	@if $breakpoint == tab-porter{
+		@media only screen and  (max-width: 81.25em){@content}; // 900 px
+	}
+
+	@if $breakpoint == tab-land{
+		@media only screen and  (max-width: 75em){@content}; // 1200 px 
+	}
+
+	@if $breakpoint == big-desk{
+		@media only screen and  (min-width: 112.5em){@content}; //1800 px 
+	}
+}

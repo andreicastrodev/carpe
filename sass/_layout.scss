@@ -1,0 +1,42 @@
+.container{
+	max-width: 130rem;
+	min-height: 60rem;
+	margin:  auto;
+	background-color: rgba($color-white, .8);
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+
+.content{
+	display: flex;
+	align-items: stretch;
+
+
+	@include respond(tab-port){
+		flex-direction: column;
+	}
+
+	@include respond(phone){
+		flex-direction: column;
+	}
+}
+
+
+.left{
+	padding:2rem;
+	flex: 0 0 20%;
+
+		@include respond(tab-port){
+		display: flex;
+		flex-wrap: wrap;
+	}	
+
+}
+
+
+.right{
+	padding: 2rem;
+	height: 100vh;
+	flex: 1;
+}
